@@ -29,14 +29,14 @@ public:
 	void InitDirectX(HWND hWnd);
 
 	void Draw(float x, float y, LPTEXTURE tex, RECT* rect = NULL, int sprite_width = 0, int sprite_height = 0);
-	void Draw(float x, float y, LPTEXTURE tex, int l, int t, int r, int b)
+	void Draw(float x, float y, LPTEXTURE tex, int l, int t, int r, int b, int sprite_width = 0, int sprite_height = 0)
 	{
 		RECT rect;
 		rect.left = l;
 		rect.top = t;
 		rect.right = r;
 		rect.bottom = b;
-		this->Draw(x, y, tex, &rect);
+		this->Draw(x, y, tex, &rect, sprite_width, sprite_height);
 	}
 
 	LPTEXTURE LoadTexture(LPCWSTR texturePath);
